@@ -1,0 +1,153 @@
+/*Скидання*/
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+
+:root{
+  --rotate: 30deg;
+  ---rotate: -30deg;
+  --btr: 50%;
+  --bbr: 50%;
+  --petal-size: 60px;
+  --scape-size-x: 20px;
+  --scape-size-y: 300px;
+  --leaf-size-x: 80px;
+  --leaf-size-y: 160px;
+  --top-translate: 100px;
+  --transition-time: 0.5s;
+  --transition-type: linear;
+}
+
+*{
+  overflow: hidden;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+h1{
+  color: white;
+  font-size: 70px;
+  text-shadow: 1px 1px black;
+}
+
+#hidder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: 10;
+  background-image: url("./podarunok.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.container{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  max-width: 350px;
+  margin: 0 auto;
+  min-height: 100vh;
+  -ms-align-items: flex-end;
+  align-items: flex-end;
+}
+
+.drow{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex: 100% 0 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.drow, .drow *{
+  overflow: visible;
+}
+
+.top__row{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  width: 350px;
+  justify-content: center;
+  transform: translateY(var(--top-translate));
+}
+
+.petal{
+  flex: var(--petal-size) 0 0;
+  height: var(--petal-size);
+  background-color: red;
+  border-radius: 100%;
+}
+
+.center{
+  flex: var(--petal-size) 0 0;
+  height: var(--petal-size);
+  background-color: yellow;
+  border-radius: 100%;
+}
+
+.drow__bottom{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: flex-end;
+  align-items: flex-end;
+}
+
+.scape{
+  flex: var(--scape-size-x) 0 0;
+  background-color: green;
+  height: var(--scape-size-y);
+}
+
+.leaf{
+  background-color: green;
+  -webkit-flex: var(--leaf-size-x) 0 0;
+  -ms-flex: var(--leaf-size-x) 0 0;
+  flex: var(--leaf-size-x) 0 0;
+  height: var(--leaf-size-y);
+  border-top-left-radius: var(--btr);
+  border-top-right-radius: var(--btr);
+  border-bottom-left-radius: var(--bbr);
+  border-bottom-right-radius: var(--bbr);
+}
+
+.left-leaf{
+  transform: rotateZ(var(---rotate));
+}
+
+.right-leaf{
+  transform: rotateZ(var(--rotate));
+}
+
+.open{
+  transform: translateY(-100%);
+  transition: transform var(--transition-time) var(--transition-type);
+}
